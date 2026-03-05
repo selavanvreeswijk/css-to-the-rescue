@@ -33,6 +33,11 @@ In de ochtend hadden we als Weekly Nerd Nils Binder. Dit was een interessante pr
 ![screenshot huidig werk](/images/prototype-3.png)
 
 ### Donderdag
+In de ochtend werd ik toen ik binnenkwam gelijk door verdrietig nieuws getroffen dat Iris gaat stoppen met dit semester. Daarna hebben we een les/ quiz gehad van Sanne over CSS-elementen. Hierna ben ik aan de slag gegaan met transities en heb ik vrijwel de hele middag gewerkt aan mijn Silly Walk. Ik ben begonnen met schetsen en heb daarna twee walks gemaakt: een waarbij de ster een rondje loopt en een waarbij hij van links naar rechts loopt. Mijn idee is dat de ster om zijn as zal gaan lopen, maar dit is me nog niet gelukt. Hier wil ik de volgende keer dat ik eraan zit op gaan focussen. Vandaag heb ik ook een workshop gehad van Sanne over anchor points. Dit was zeer interessant, al weet ik nog niet helemaal hoe ik dit in mijn ontwerp kan implemeteren. Dat volgt. 
+
+![screenshot huidig werk](/images/schets.png)
+![screenshot huidig werk](/images/prototype-5.png)
+![screenshot huidig werk](/images/prototype-4.png)
 
 ### Vrijdag
 
