@@ -5,8 +5,7 @@
 ## Week 3
 
 ### Woensdag
-Hier lag ik de hele dag met koorts op bed.
-
+Hier lag ik de hele dag te bakken met koorts op bed.
 
 ### Donderdag 
 Hier was ik nog steeds ziek maar heb ik in de avond de presentaties doorgelezen en die zo goed mogelijk geprobeerd te begrijpen. Mijn idee is om de 'silly walk' richting te kiezen en een poppetje/figuur/dier te maken die bepaalde handelingen uitvoert op basis van interactie.
@@ -35,14 +34,45 @@ In de ochtend hadden we als Weekly Nerd Nils Binder. Dit was een interessante pr
 ### Donderdag
 In de ochtend werd ik toen ik binnenkwam gelijk door verdrietig nieuws getroffen dat Iris gaat stoppen met dit semester. Daarna hebben we een les/ quiz gehad van Sanne over CSS-elementen. Hierna ben ik aan de slag gegaan met transities en heb ik vrijwel de hele middag gewerkt aan mijn Silly Walk. Ik ben begonnen met schetsen en heb daarna twee walks gemaakt: een waarbij de ster een rondje loopt en een waarbij hij van links naar rechts loopt. Mijn idee is dat de ster om zijn as zal gaan lopen, maar dit is me nog niet gelukt. Hier wil ik de volgende keer dat ik eraan zit op gaan focussen. Vandaag heb ik ook een workshop gehad van Sanne over anchor points. Dit was zeer interessant, al weet ik nog niet helemaal hoe ik dit in mijn ontwerp kan implemeteren. Dat volgt. 
 
-![screenshot huidig werk](/images/schets.png)
 ![screenshot huidig werk](/images/prototype-5.png)
 ![screenshot huidig werk](/images/prototype-4.png)
 
 ### Vrijdag
+Vandaag heb ik het voortgangsgesprek gehad. Ik kreeg als tip om transform-origin: 50% 100px; te gebruiken om mijn ster te positioneren in het midden zodat de benen er omheen draaien. Woensdag wil ik aan de slag met mijn htlm beter nesten (voeten in de onderbenen bijvoorbeeld) en wil ik aan de eisen beginnen zodat ik die niet vergeet.
 
 ### Weekverslag week 5
-Na een week vakantie gehad te hebben...
+Na een week vakantie gehad te hebben moest ik er weer even inkomen, maar ik heb in de vakantie een plan bedacht en dat woensdag en donderdag uitgevoerd. Ik heb geleerd over clip-paths en ben begonnen met mijn ster om zijn as laten draaien. Dit was interessant en volgende week wil ik aan de slag met mijn animaties soepeler laten verlopen (en er meer maken) en beginnen aan de eisen.
+
+![screenshot huidig werk](/images/schets.png)
+![screenshot huidig werk](/images/prototype-4.png)
+
+</details>
+
+<details><summary>Week 6</summary>
+
+## Week 6
+
+### Woensdag
+Vandaag moest ik er weer even inkomen. Ik moet nu nieuwe dingen bedenken voor mijn ontwerp maar in de klas lukt dat lastig, dus heb ik me vandaag op de structuur en eisen gefocust. Ik heb mijn css genest, met @layer leren werken, mijn html beter genest en een schets gemaakt voor het finaliseren van mijn werk. Morgen wil ik beginnen met dit startscherm van de ster en het idee afmaken wat ik daarna allemaal met de ster kan gaan doen zodat ik dat volgende week als laatste week kan doen.
+
+![screenshot huidig werk](/images/prototype-7.png)
+![screenshot huidig werk](/images/prototype-8.png)
+![screenshot huidig werk](/images/prototype-6.png)
+
+### Donderdag
+In de ochte
+
+![screenshot huidig werk](/images/prototype-5.png)
+![screenshot huidig werk](/images/prototype-4.png)
+
+### Vrijdag
+Vandaag heb ik het voortgangsgesprek gehad.
+
+### Weekverslag week 6
+Na een week 
+
+![screenshot huidig werk](/images/schets.png)
+![screenshot huidig werk](/images/prototype-4.png)
 
 </details>
 
