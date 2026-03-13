@@ -60,12 +60,19 @@ Vandaag moest ik er weer even inkomen. Ik moet nu nieuwe dingen bedenken voor mi
 ![screenshot huidig werk](/images/prototype-6.png)
 
 ### Donderdag
-In de ochte
+- btn gemaakt + titel 
+- beide laten verwijnen met has:checked 
+- poppetje gaat op en neer zo van 'doe iets'
+- ogen kleine animatie dat ze heen en weer kijken (het ene oog heeft ook een delay)
 
-![screenshot huidig werk](/images/prototype-5.png)
-![screenshot huidig werk](/images/prototype-4.png)
+![screenshot huidig werk](/images/prototype-9.png)
+![screenshot huidig werk](/images/prototype-10.png)
+![screenshot huidig werk](/images/prototype-11.png)
 
 ### Vrijdag
+- in de ochtend het plan uitgewerkt: wanneer je op start klikt komen er vier knoppen in beeld die allemaal een verschillende interactie weergeven
+- ook al aan 1 knop het ronddraaien van de ster gekoppeld
+
 Vandaag heb ik het voortgangsgesprek gehad.
 
 ### Weekverslag week 6
