@@ -60,26 +60,50 @@ Vandaag moest ik er weer even inkomen. Ik moet nu nieuwe dingen bedenken voor mi
 ![screenshot huidig werk](/images/prototype-6.png)
 
 ### Donderdag
-- btn gemaakt + titel 
-- beide laten verwijnen met has:checked 
-- poppetje gaat op en neer zo van 'doe iets'
-- ogen kleine animatie dat ze heen en weer kijken (het ene oog heeft ook een delay)
+Vandaag heb ik vanuit huis en in de trein gewerkt omdat ik naar mijn oma moest. Ik heb verdergewerkt aan de schets die ik gisteren had opgesteld. Ik heb een startknop gemaakt, een titel, vervolgens beide laten verdwijnen met has:checked en het poppetje op en neer laten gaan. Ook heb ik een kleine animatie gemaakt voor de ogen dat ze heen en weer gaan. Verder heb ik ook een plan gemaakt voor de rest van mijn project.
 
 ![screenshot huidig werk](/images/prototype-9.png)
 ![screenshot huidig werk](/images/prototype-10.png)
 ![screenshot huidig werk](/images/prototype-11.png)
+![screenshot huidig werk](/images/prototype-12.png)
 
 ### Vrijdag
-- in de ochtend het plan uitgewerkt: wanneer je op start klikt komen er vier knoppen in beeld die allemaal een verschillende interactie weergeven
-- ook al aan 1 knop het ronddraaien van de ster gekoppeld
+Vanochtend heb ik mijn plan uitgewerkt van gisteren: wanneer je op start klikt komen er vier knoppen in beeld die verschillende interacties weergeven. Ik heb knop 1 gekoppeld aan het ronddraaien van de ster. Hierna had ik het voortgangsgesprek waarin ik mijn voortgang heb besproken.
 
-Vandaag heb ik het voortgangsgesprek gehad.
+Feedback:
+- Onderbeen nesten in bovenbeen 
+- Layer kan in een layer
+- Value= gebruiken voor de checkboxes
+- Container queries gebruiken (container=inline-style + naam geven en daarna @container de naam{})
+- Hem nog silly maken
+- Bij evil mode het loopje ook aggresiever maken
 
 ### Weekverslag week 6
 Na een week 
 
 ![screenshot huidig werk](/images/schets.png)
 ![screenshot huidig werk](/images/prototype-4.png)
+
+</details>
+
+<details><summary>Week 7</summary>
+
+## Week 7
+
+### Dinsdag
+Vandaag heb ik ook aan css gewerkt. Ik heb mijn onderbeen (eindelijk!) genest in mijn bovenbeen, value="" gebruikt voor de checkboxes zodat ik ze op die manier kan aanspreken, het begin van container queries leren gebruiken en mijn concept verder uitgewerkt. Ik ben hier allemaal in totaal drie uur mee bezig geweest. In de avond heb ik nog gewerkt aan een variabel font, hier ben ik twee uur mee bezig geweest. Daarna heb ik nog een uur mijn finale concept uitgewerkt. 
+
+### Woensdag
+...
+
+### Donderdag
+...
+
+### Vrijdag
+...
+
+### Weekverslag week 6
+...
 
 </details>
 
