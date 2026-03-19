@@ -115,6 +115,8 @@ Ik vond het ook heel interessant om met @layer te gebruiken, dat was heel handig
 
 Al met al ben ik dus blij met het eindresultaat, vooral dat ik zoveel interacties heb kunnen combineren op een leuke en grappige manier. Ik had me nog meer willen verdiepen in de animaties of combinaties van verschillende knoppen uitgebreider te maken en het was mijn idee om een supernova knal aan het einde te doen - alleen moest ik ook nog wat tijd besteden aan dingen als deze readme! 
 
+<img src="https://github.com/user-attachments/assets/9d82d1d2-f3ac-491b-9aa5-9ff4f60ccb30" />
+<img src="https://github.com/user-attachments/assets/b395c897-1e5b-4301-9ff2-d959c9798cad" />
 <img src="https://github.com/user-attachments/assets/c8e649dd-d100-4c2f-ad7c-25ac9e9868dd" />
 <img src="https://github.com/user-attachments/assets/6db90b1d-6426-4600-ad5c-ffe0482a9561" />
 <img src="https://github.com/user-attachments/assets/dfe9eb78-4ef2-49a9-9899-3b3c19b96346" />
