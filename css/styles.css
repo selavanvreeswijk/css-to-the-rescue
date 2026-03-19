@@ -2652,7 +2652,7 @@ main > section > aside + div{
 
     /* Alles wit */
     html::after{
-        content: "Right. Carry on.";
+        content: "This was not meant to happen.";
         position: fixed;
         inset: 0;
 
