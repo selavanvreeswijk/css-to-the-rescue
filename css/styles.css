@@ -813,7 +813,7 @@ main > section > aside + div{
     }
 
     /* Voet rechts */
-    section:nth-of-type(2) > div:last-child > ul:last-child > li:nth-child(2) div{
+    section:nth-of-type(2) > div:last-child > div:last-child > div > div{
         animation: voetRechts 0.8s infinite ease-in-out;
         transform-origin: top center;
     }
@@ -1229,7 +1229,7 @@ main > section > aside + div{
     }
 
     /* Voet rechts */
-    section:nth-of-type(2) > div:last-child > ul:last-child > li:nth-child(2) div{
+    section:nth-of-type(2) > div:last-child > div:last-child > div > div{
         animation: voetRechtsEvil 0.8s infinite ease-in-out;
         transform-origin: top center;
     }
@@ -1360,7 +1360,7 @@ main > section > aside + div{
     }
 
     /* Voet rechts */
-    section:nth-of-type(2) > div:last-child > ul:last-child > li:nth-child(2) div{
+    section:nth-of-type(2) > div:last-child > div:last-child > div > div{
         animation: voetRechts 0.2s infinite ease-in-out;
     }
 
@@ -1699,7 +1699,7 @@ main > section > aside + div{
     }
 
     header span:nth-of-type(1)::after{
-        content: "Right. Carry on";
+        content: "This is getting silly";
         color: white;
     }
 
@@ -2329,7 +2329,7 @@ main > section > aside + div{
     }
 
     /* Voet rechts */
-    section:nth-of-type(2) > div:last-child > ul:last-child > li:nth-child(2) div{
+    section:nth-of-type(2) > div:last-child > div:last-child > div > div{
         animation: rechterVoet 0.8s infinite ease-in-out;
         transform-origin: top center;
     }
@@ -2624,7 +2624,7 @@ main > section > aside + div{
     }
 
     /* Geen bewegende benen */
-    section:nth-of-type(2) > div:last-child > ul:last-child > li:nth-child(2) div,
+    section:nth-of-type(2) > div:last-child > div:last-child > div > div,
     section:nth-of-type(2) > div:last-child > div > div > div,
     section:nth-of-type(2) > div:last-child > div > div,
     section:nth-of-type(2) > div:last-child > div:last-child,
@@ -2652,7 +2652,7 @@ main > section > aside + div{
 
     /* Alles wit */
     html::after{
-        content: "This was not meant to happen.";
+        content: "Right. Carry on.";
         position: fixed;
         inset: 0;
 
@@ -2671,7 +2671,7 @@ main > section > aside + div{
 
         animation: whiteOut 0s forwards;
 
-        animation-delay: 1.65s
+        animation-delay: 1.65s;
     }
 
     @keyframes whiteOut{
