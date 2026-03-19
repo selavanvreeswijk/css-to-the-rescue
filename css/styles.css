@@ -32,24 +32,30 @@
     --color-text: black;
 }
 
-html:has([value="dizzy"]:checked){
-    --dizzy:pressed;
-}
+@layer interactie{
+    html{
+        container-type: style;
+    }
 
-html:has([value="evil"]:checked){
-    --evil:pressed;
-}
+    html:has([value="dizzy"]:checked){
+        --dizzy:pressed;
+    }
 
-html:has([value="wonky"]:checked){
-    --wonky:pressed;
-}
+    html:has([value="evil"]:checked){
+        --evil:pressed;
+    }
 
-html:has([value="risky"]:checked){
-    --risky:pressed;
-}
+    html:has([value="defect"]:checked){
+        --defect:pressed;
+    }
 
-html:has([value="startknop"]:checked){
-    --startknop:pressed;
+    html:has([value="failing"]:checked){
+        --failing:pressed;
+    }
+
+    html:has([value="startknop"]:checked){
+        --startknop:pressed;
+    }
 }
 
 body{
@@ -77,7 +83,6 @@ h1{
     font-family: 'Roboto Flex', sans-serif;
     font-size: clamp(1em, 7vw, 4em);
     line-height: 1;
-
     letter-spacing: -0.02em;
 
     color: var(--color-text);
@@ -91,7 +96,6 @@ Bron: chatGPT voor font-variation-settings dat niet werkte en daardoor oplossing
     0%{
         font-weight: 650;
         font-stretch: 100%;
-        /* font-variation-settings: ; */
         letter-spacing: -0.02em;
     }
 
@@ -121,7 +125,81 @@ Bron: chatGPT voor font-variation-settings dat niet werkte en daardoor oplossing
 
 }
 
-/* Voor uitlijning knoppen na druk op startknop */
+/* Titel website veranderen */
+@layer interactie{
+
+header{
+
+    h2{
+        font-family: 'Roboto Flex', sans-serif;
+        font-size: clamp(0.5em, 6vw, 2em);
+        line-height: 1;
+        letter-spacing: -0.02em;
+
+        color: var(--color-text);
+
+        display: none;
+    }
+
+    span{
+        position: relative;
+    }
+
+}
+
+header span:nth-of-type(2):hover{
+    color: transparent;
+}
+
+/* Tekst: Spanish Inquisition */
+header span:nth-of-type(2):hover::after{
+    content:"Spanish Inquisition";
+
+    position: absolute;
+    width: 10em;
+    left: 0;
+    color: black;
+}
+
+body:has(footer [type="radio"]:checked){
+
+    header{
+        display: flex;
+        flex-direction: column;
+    }
+
+    header h2{
+        display: block;
+
+        position: absolute;
+        width: 15em;
+        top: 4.8em;
+        left: 38vw;
+    }
+
+    header span:nth-of-type(1){
+        color: transparent;  
+    } 
+
+    header span:nth-of-type(2){
+        display: none;
+    }
+
+}
+
+/* Tekst: Everything is perfectly normal */
+body:has(footer [type="radio"]:checked) header span:nth-of-type(1)::after{
+    content: "Everything is perfectly normal.";
+
+    position: absolute;
+    width: 20em;
+    left: 25vw;
+    color: black;
+}  
+
+}
+
+/* Voor uitlijning interactieknoppen na druk op startknop */
 main{
     display: flex; 
     align-items: center; 
@@ -130,9 +208,9 @@ main{
     gap: 80px;
 }
 
+/* Ster gaat op en neer */
 @layer animatie{
 
-/* Ster gaat op en neer */
 main section:nth-child(2){
     position: relative;
     transform-origin: center;
@@ -169,10 +247,9 @@ main > section > label{
     color: white;
     text-transform: uppercase;
     font-family: 'Roboto Flex', sans-serif;
-    font-weight: 400;
+    font-weight: bold;
 
     border-radius: 6px;
-    border: none;
     cursor: pointer;
 
     padding: 1em 3em;
@@ -186,6 +263,10 @@ main > section > label{
 
         transition: .5s ease;
     }
+}
+
+main > section > label:has(input:checked){
+    background-color: var(--color-btn-hover);
 }
 
 footer{
@@ -211,7 +292,21 @@ footer{
         }
     }
 
-    /* 'Button' hover */
+    p{
+        font-family: 'Roboto Flex', sans-serif;
+        letter-spacing: 0.015em;
+        font-size: 0.8em;
+
+        position: absolute;
+        bottom: 0.3em;
+        right: 0.4em;
+    }
+
+    p:nth-of-type(2){
+        display: none;
+    }
+
+    /* 'Startbutton' hover */
     &:has([type="radio"]:hover){
         label{
             background-color: var(--color-btn);
@@ -220,15 +315,38 @@ footer{
         }
     }
 
-    /* 'Button' laten verdwijnen */
+    /* Startbutton en teksten aanpassen */
     &:has([type="radio"]:checked){
         label{
             display: none;
         }
+
+        /* Philosophical grounds */
+        p:nth-of-type(1){
+            display: none;
+        }
+
+        /* My name? */
+        p:nth-of-type(2){
+            display: block;
+            position: relative;
+
+            bottom: 1em;
+            right: 40em;
+        }
+
+        p:nth-of-type(2):hover::after{
+            content:"There are some who call me... Tim.";
+
+            position: absolute;
+            width: 20em;
+            top: 120%;
+            left: 0;
+        }
     }
 }
 
-} /* Hier eindigt de layer 'algemeen' */
+}
 
 /* --------------------------------------------------------------------------------- MARK: LICHAAM HOOFD
 */
@@ -452,14 +570,19 @@ main > section > div:last-child > div > div > div{
     border-radius: 2px;
 }
 
-} /* Hier eindigt de layer 'lichaam' */
+}
 
 /* --------------------------------------------------------------------------------- MARK: INTERACTIE
-*/
+*/ /* Bron hoe aanpakken Silly Walk en animaties: https://miocene.io/demo/css-noodle/ */
 
 @layer interactie{
-    
-/* Default: geen animatie bij titel na klik */
+
+/* Interactie pupil, oog weg */
+label:has(input[value="oog"]:checked) div{
+    display: none;
+}
+
+/* Default titel: geen animatie bij titel na klik */
 body:has(footer input[type="radio"]:checked) header h1{
     animation: none !important;
 }
@@ -474,125 +597,10 @@ body:has(footer input[type="radio"]:checked) main > section:last-child{
     height: 30vh;
 }
 
-/* Interactie knop 2 - Ander thema */
-@container style(--evil:pressed) {
-    body{
-        --color-star: #FFF000;
-        --color-legs: white;
-        --color-btn: black;
-        --color-btn-hover: #FFF000;
-        --color-text: white;
-        --color-main-background: #000435;
-        --color-pupils: red;
-    }
-
-    /* Evil wenkbrouw links */
-    main section:nth-of-type(2) > div > div > label:first-child::before{
-         content:"";
-        position: absolute;
-
-        width: 25px;
-        height: 4px;
-        background-color: black;
-
-        margin-bottom: 35px;
-        transform: translateX(-4px);
-    }
-
-    /* Evil wenkbrouw rechts */
-    main section:nth-of-type(2) > div > div > label:last-child::before{
-    content:"";
-    position: absolute;
-
-    width: 25px;
-    height: 4px;
-    background-color: black;
-
-    margin-bottom: 35px;
-    transform: rotate(-30deg) translateX(-4px);
-    }
-
-    /* Glimlach */
-    main section:nth-of-type(2) > div > div::after{
-    content:"";
-    position: absolute;
-
-    width: 12px;
-    height: 2px;
-    background-color: black;
-
-    transform: rotate(-5deg) translateX(10px) translateY(40px);
-    border-radius: 10px;
-    }
 }
-
-/* ------------  Interactie container style queries combinaties ------------- */
-
-@container style(--dizzy:pressed) and style(--evil:pressed){
-
-    body{
-        animation: achtergrondKleurAnders 5s infinite;
-    }
-
-    @keyframes achtergrondKleurAnders{
-
-        0%{
-            background-color: #000435;
-        }
-
-        10%{
-            background-color: #0a0f5c;
-        }
-
-        20%{
-            background-color: #1a0066;
-        }
-
-        30%{
-            background-color: #3b0088;
-        }
-
-        40%{
-            background-color: #5f00a8;
-        }
-
-        50%{
-            background-color: #2e8b57; 
-        }
-
-        60%{
-            background-color: #6b8e23;
-        }
-
-        70%{
-            background-color: #8b0000; 
-        }
-
-        80%{
-            background-color: #4b0000; 
-        }
-
-        90%{
-            background-color: #1a0000;
-        }
-
-        100%{
-            background-color: #000000;
-        }
-
-    }
-
-}
-
-/* Interactie pupil, oog weg */
-label:has(input[value="oog"]:checked) div{
-    display: none;
-}
-
-} /* Hier eindigt deze layer 'interactie' */
 
 /* --------------------------------------------------------------------------------- MARK: ANIMATIE
-*/ /* Bron hoe aanpakken Silly Walk: https://miocene.io/demo/css-noodle/ */
+*/
 
 @layer animatie{
 
@@ -625,13 +633,13 @@ main > section > div > div label div{
 
 }
 
-/* Rechteroog heeft een delay met het kijken */
+/* Rechteroog heeft een delay met kijken */
 main > section > div > div > label:last-child div{
     animation-delay: 0.5s;
 }
 
 /* Hoofd ster scale */
-main > section > div:first-child{
+main > section > aside + div{
     animation: scaleHoofd 2.5s linear infinite;
 }
 
@@ -651,7 +659,7 @@ main > section > div:first-child{
 
 }
 
-/* Knop start gedrukt */
+/* ------------------Knop Start ------------------ */
 @container style(--startknop:pressed){
     /* Beide benen (en bovenbeen) */
     main > section > div:last-child > div{
@@ -790,6 +798,20 @@ main > section > div:first-child{
 
 /* ------------------Knop Dizzy ------------------ */
 @container style(--dizzy:pressed){
+    /* Titel */
+    header span:nth-of-type(1){
+        color: transparent;
+    }
+
+    header span:nth-of-type(1)::after{
+        content: "Who approved this?";
+
+        position: absolute;
+        width: 20em;
+        left: 33vw;
+        color: white;
+    }
+
     /* Hele lichaam laten draaien */
     main > section:first-child{
         position: relative;
@@ -797,10 +819,10 @@ main > section > div:first-child{
     }
 
     main:has(section:first-child label:nth-child(1) input:checked) > section:nth-of-type(2){
-        animation: dizzy 6s linear infinite;
+        animation: rondDraaien 6s linear infinite;
     }
 
-    @keyframes dizzy{
+    @keyframes rondDraaien{
 
         0%{
             transform: rotate(0deg);
@@ -812,54 +834,99 @@ main > section > div:first-child{
 
     }
 
+    /* Achtergrond (kleur & kantel) */
     body{
-        animation: achtergrondKleurAnders 5s infinite;
+        /* Bron cirkel achtergrond: https://www.magicpattern.design/tools/css-backgrounds */
+        background-image: radial-gradient(circle at center center, #444cf7, #e5e5f7), repeating-radial-gradient(circle at center center, #444cf7, #444cf7, 9px, transparent 18px, transparent 9px);
+        background-blend-mode: multiply;
+        opacity: 1;
+
+        animation: achtergrondDizzy 5s infinite !important;
     }
 
-    @keyframes achtergrondKleurAnders{
+    @keyframes achtergrondDizzy{
 
         0%{
             background-color: steelblue;
+            transform: rotate(0deg);
         }
 
         10%{
             background-color: red;
+            transform: rotate(3deg);
         }
 
         20%{
             background-color: orange;
+            transform: rotate(-4deg);
         }
 
         30%{
-            background-color: yellow;
+            background-color: yellow;            
+            transform: rotate(6deg);
         }
 
         40%{
             background-color: green;
+            transform: rotate(-5deg);
         }
 
         50%{
             background-color: blue;
+            transform: rotate(4deg);
         }
 
         60%{
             background-color: indigo;
+            transform: rotate(-6deg);
         }
 
         70%{
             background-color: violet;
+            transform: rotate(5deg);
         }
 
         80%{
             background-color: pink;
+            transform: rotate(-3deg);
         }
 
         90%{
             background-color: brown;
+            transform: rotate(2deg);
         }
 
         100%{
-            background-color: black;
+            background-color: steelblue;
+            transform: rotate(360deg);
+        }
+
+    }
+
+    main > section > aside + div{
+        animation: misselijkGroen 2s linear infinite;
+    }
+
+    @keyframes misselijkGroen{
+
+        0%{
+            --color-star: #B5C306;
+        }
+
+        25%{
+            --color-star: #B6C406;
+        }
+
+        50%{
+            --color-star: #D4D977;
+        }
+
+        75%{
+            --color-star: #B6C406;
+        }
+
+        100%{
+            --color-star: #B5C306;
         }
 
     }
@@ -882,9 +949,336 @@ main > section > div:first-child{
     }
 }
 
-/* ------------------Knop Wonky ------------------ */
-    /* Achtergrond
-    Bron: https://www.sliderrevolution.com/resources/css-animated-background/
+/* ----------------Knop Evil (& ander thema)---------------- */
+@container style(--evil:pressed){
+    /* Titel */
+    header span:nth-of-type(1){
+        color: transparent;
+    }
+
+    header span:nth-of-type(1)::after{
+        content: "Something is... different";
+
+        position: absolute;
+        width: 20em;
+        left: 29vw;
+        color: white;
+    }
+
+    body{
+        --color-star: #FFF000;
+        --color-legs: white;
+        --color-btn: black;
+        --color-btn-hover: #FFF000;
+        --color-text: white;
+        --color-main-background: #000435;
+        --color-pupils: red;
+    }
+
+    /* Evil wenkbrouw links */
+    main section:nth-of-type(2) > div > div > label:first-child::before{
+         content: "";
+        position: absolute;
+
+        width: 25px;
+        height: 4px;
+        background-color: black;
+
+        margin-bottom: 35px;
+        transform: translateX(-4px);
+
+        animation: wenkbrauwlinks 1s infinite ease-in-out;
+        transform-origin: center;
+    }
+
+    @keyframes wenkbrauwlinks{
+
+        0%{
+            transform: translateX(-4px) translateY(0px);
+        }
+
+        50%{
+            transform: translateX(-4px) translateY(-4px);
+        }
+
+        100%{
+            transform: translateX(-4px) translateY(0px);
+        }
+
+    }
+
+    /* Evil wenkbrouw rechts */
+    main section:nth-of-type(2) > div > div > label:last-child::before{
+        content: "";
+        position: absolute;
+
+        width: 25px;
+        height: 4px;
+        background-color: black;
+
+        margin-bottom: 35px;
+        transform: rotate(-30deg) translateX(-4px);
+
+        animation: wenkbrauwRechts 0.6s infinite ease-in-out;
+        transform-origin: center;
+    }
+
+    @keyframes wenkbrauwRechts{
+
+        0%{
+            transform: rotate(-30deg) translateX(-4px) translateY(0px);
+        }
+
+        50%{
+            transform: rotate(-35deg) translateX(-4px) translateY(-8px);
+        }
+
+        100%{
+            transform: rotate(-30deg) translateX(-4px) translateY(0px);
+        }
+
+    }
+
+    /* Glimlach */
+    main > section:nth-of-type(2) > aside + div > div::after{
+        content: "";
+        position: absolute;
+
+        width: 12px;
+        height: 2px;
+        background-color: black;
+
+        transform: rotate(-5deg) translateX(10px) translateY(40px);
+        border-radius: 10px;
+    }
+
+    /* -------------Loopje agressiever------------- */
+    section:nth-of-type(2) div{
+        animation: trillen 0.2s infinite;
+    }
+
+    @keyframes trillen{
+
+        0%{ 
+            transform: translateY(0px); 
+        }
+
+        50%{ 
+            transform: translateY(-2px); 
+        }
+
+        100%{ 
+            transform: translateY(0px); 
+        }
+
+    }
+
+    /* Linkerbeen */
+    section:nth-of-type(2) > div:last-child > div:first-child{
+        animation: beenLinksEvil 1.2s infinite linear;
+    }
+
+    @keyframes beenLinksEvil{
+
+        0%{
+            transform: rotate(-45deg);
+        }
+
+        40%{
+            transform: rotate(50deg);
+        }
+
+        55%{
+            transform: rotate(30deg);
+        }
+
+        100%{
+            transform: rotate(-45deg);
+        }
+
+    }
+
+    /* Rechterbeen */
+    section:nth-of-type(2) > div:last-child > div:last-child{
+        animation: beenRechtsEvil 1.2s infinite linear;
+    }
+
+    @keyframes beenRechtsEvil{
+
+        0%{
+            transform: rotate(45deg);
+        }
+
+        40%{
+            transform: rotate(-50deg);
+        }
+
+        55%{
+            transform: rotate(-30deg);
+        }
+
+        100%{
+            transform: rotate(45deg);
+        }
+
+    }
+
+    /* Knie */
+    section:nth-of-type(2) > div:last-child > div > div{
+        animation: knieEvil 0.6s infinite linear;
+        transform-origin: top;
+    }
+
+    @keyframes knieEvil{
+
+        0%{
+            transform: rotate(0deg);
+        }
+
+        50%{
+            transform: rotate(70deg);
+        }
+
+        100%{
+            transform: rotate(0deg);
+        }
+
+    }
+
+    /* Voet links */
+    section:nth-of-type(2) > div:last-child > div > div > div{
+        animation: voetLinksEvil 0.8s infinite ease-in-out;
+        transform-origin: top center;
+    }
+
+    @keyframes voetLinksEvil{
+
+        0%{
+            transform: rotate(25deg);
+        }
+
+        50%{
+            transform: rotate(-25deg);
+        }
+
+        100%{
+            transform: rotate(25deg);
+        }
+
+    }
+
+    /* Voet rechts */
+    section:nth-of-type(2) > div:last-child > ul:last-child > li:nth-child(2) div{
+        animation: voetRechtsEvil 0.8s infinite ease-in-out;
+        transform-origin: top center;
+    }
+
+    @keyframes voetRechtsEvil{
+
+        0%{
+            transform: rotate(-25deg);
+        }
+
+        50%{
+            transform: rotate(25deg);
+        }
+
+        100%{
+            transform: rotate(-25deg);
+        }
+
+    }
+
+    /* Heen en weer lopen */
+    section:nth-of-type(2){
+        animation: basisLoopjeEvil 6s linear infinite;
+    }
+
+    @keyframes basisLoopjeEvil{
+
+        0%{
+            transform: translateX(-10px);
+        }
+
+        50%{
+            transform: translateX(60px);
+        }
+
+        100%{
+            transform: translateX(-10px);
+        }
+
+    }
+}
+
+/* ------------------Knop Defect ------------------ */
+@container style(--defect:pressed){
+    /* Titel */
+    header span:nth-of-type(1){
+        color: transparent;
+    }
+
+    header span:nth-of-type(1)::after{
+        content: "'Tis but a scratch";
+
+        position: absolute;
+        width: 20em;
+        left: 36.5vw;
+        color: black;
+    }
+
+    /* Achtergrond */
+    /* Bronnen: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/repeating-linear-gradient
+    & https://codepen.io/meduzen/pen/zxbwRV?editors=1100 */
+    body::after{
+        content: "";
+        position: fixed;
+        inset: 0;
+
+        background: repeating-linear-gradient(
+            to bottom,
+            transparent,
+            transparent 3px,
+            black 4px
+        );
+
+        pointer-events: none;
+        animation: scanlines 0.4s linear infinite;
+
+        z-index: -1;
+    }
+
+    @keyframes scanlines{
+
+        0%{ 
+            transform: translateY(0); 
+        }
+
+        100%{ 
+            transform: translateY(10px); 
+        }
+
+    }
+}
+
+/* ------------------Knop Failing ------------------ */
+@container style(--failing:pressed){
+    /* Titel */
+    header span:nth-of-type(1){
+        color: transparent;
+    }
+
+    header span:nth-of-type(1)::after{
+        content: "Oh dear.";
+
+        position: absolute;
+        width: 20em;
+        left: 33vw;
+        color: white;
+    }
+
+    /* Achtergrond */
+    /* Bron: https://www.sliderrevolution.com/resources/css-animated-background/ */
 
     body{
         background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
@@ -905,24 +1299,158 @@ main > section > div:first-child{
         100% {
             background-position: 0% 50%;
         }
-    } */
+    }
 
-/* ------------------Knop Risky ------------------ */
-/* Achtergrond
-    Bron: https://codepen.io/rediris/pen/PojWxP?anon=true&view=pen 
-    
+    /* Heen en weer lopen */
     body{
-        background-color:white;
-        background-image: linear-gradient(45deg, rgba(5,0,0,.5) 50%, transparent 50%),
-        linear-gradient(135deg,rgba(5,0,0,.5) 50%, transparent 50%);
-        background-size:10px 10px;
-} */
+        overflow-x: hidden;
+    }
 
-/* Andere achtergronden
-Shooting stars 2. : https://prismic.io/blog/css-background-effects
-https://prismic.io/blog/css-background-effects 
-https://codepen.io/JuneBug1897/pen/abRYoQL */
+    section:nth-of-type(2){
+        animation: loopVanScherm 5s linear infinite;
+    }
 
+    @keyframes loopVanScherm{
 
-} /* Hier eindigt de layer 'animatie' */
+        0%{
+            transform: translateX(-100vw);
+        }
+
+        25%{
+            transform: translateX(100vw);
+        }  
+        
+        50%{
+            transform: translateX(-100vw);
+        }
+
+        100%{
+            transform: translateX(100vw);
+        }
+
+    }
+
+    /* Benen sneller laten lopen */
+    /* Voet rechts */
+    section:nth-of-type(2) > div:last-child > ul:last-child > li:nth-child(2) div{
+        animation: voetRechts 0.2s infinite ease-in-out;
+    }
+
+    /* Voet links */
+    section:nth-of-type(2) > div:last-child > div > div > div{
+        animation: voetLinks 0.2s infinite ease-in-out;
+    }
+
+    /* Knie */
+    section:nth-of-type(2) > div:last-child > div > div{
+        animation: knie 1s infinite ease-in-out;
+    }
+
+    /* Rechterbeen */
+    section:nth-of-type(2) > div:last-child > div:last-child{
+        animation: beenRechtsEvil 0.4s infinite ease-in-out;
+    }
+
+    /* Linkerbeen */
+    section:nth-of-type(2) > div:last-child > div:first-child{
+        animation: beenLinksEvil 0.4s infinite ease-in-out;
+    }
+
+    /* Pulse animatie */
+    main > section > aside + div{
+        animation: scaleHoofd 1s linear infinite;
+    }
+
+    @keyframes scaleHoofd{
+
+        0%{
+            transform: scale(1);
+            box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+        }
+
+        50%{
+            transform: scale(1.2);
+        }
+
+        100%{
+            transform: scale(1);
+            box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+        }
+
+    }    
+}
+
+/* ----------------  Container Style Queries combinaties ------------- */
+
+@container style(--dizzy:pressed) and style(--evil:pressed){
+
+    body{
+        animation: achtergrondtrillenEnKleur 5s infinite;
+    }
+
+    @keyframes achtergrondtrillenEnKleur{
+
+        0%{
+            background-color: #000435;
+        }
+
+        10%{
+            background-color: #0a0f5c;
+        }
+
+        20%{
+            background-color: #1a0066;
+        }
+
+        30%{
+            background-color: #3b0088;
+        }
+
+        40%{
+            background-color: #5f00a8;
+        }
+
+        50%{
+            background-color: #2e8b57; 
+        }
+
+        60%{
+            background-color: #6b8e23;
+        }
+
+        70%{
+            background-color: #8b0000; 
+        }
+
+        80%{
+            background-color: #4b0000; 
+        }
+
+        90%{
+            background-color: #1a0000;
+        }
+
+        100%{
+            background-color: #000000;
+        }
+
+    }
+
+}
+
+@container style(--dizzy:pressed) or style(--evil:pressed) or style(--defect:pressed) or style(--failing:pressed){
+
+    /* H2 niet laten zien */
+    body:has(footer [type="radio"]:checked) header h2{
+        display: none;
+    }
+
+    /* Tekst 'my name?' niet laten zien */
+    footer > p:nth-of-type(2){
+        display: none;
+    }
+
+}
+
+}
 

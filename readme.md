@@ -94,7 +94,20 @@ Na een week
 Vandaag heb ik ook aan css gewerkt. Ik heb mijn onderbeen (eindelijk!) genest in mijn bovenbeen, value="" gebruikt voor de checkboxes zodat ik ze op die manier kan aanspreken, het begin van container queries leren gebruiken en mijn concept verder uitgewerkt. Ik ben hier allemaal in totaal drie uur mee bezig geweest. In de avond heb ik nog gewerkt aan een variabel font, hier ben ik twee uur mee bezig geweest. Daarna heb ik nog een uur mijn finale concept uitgewerkt. 
 
 ### Woensdag
-...
+Vandaag heb ik mijn knoppen beter uitgewerkt. Hier ben ik de hele dag mee bezig geweest. 
+
+Knop 1:
+- Achtergrond toegevoegd
+- 3D sterren toegevoegd (ook voor de ogen)
+- Achtergrond animatie die kantelt 
+
+Knop 3: 
+- Het loopje sneller gemaakt
+
+In de avond/ nacht:
+- Onderzoek naar bekende quotes van Monty Phyton voor titels en knoppen (Youtube, forums). Deze vervolgens geïntegreerd bij mijn verschillende states. Twee uur mee bezig geweest
+- Knop 2 Evil verder gefinaliseerd
+- Knop 4 defect achtergrond geprobeerd en uiteindelijk strepen gemaakt
 
 ### Donderdag
 ...
