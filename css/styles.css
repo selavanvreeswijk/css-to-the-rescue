@@ -25,13 +25,12 @@
     --color-main-background: #F5F0E4;
     --color-star: #F4574C;
     --color-eyes: white;
-    --color-pupils: #1A1A1A;;
+    --color-pupils: #1A1A1A;
     --color-legs: #4A2E1F;
     --color-btn: #F3B6BE;
     --color-btn-hover: #F7C9CF;
     --color-btn-active: #FF8C42;
     --color-text: #1A1A1A;
-
     --star-size: clamp(80px, 30vw, 250px);
 }
 
@@ -73,12 +72,12 @@ body{
 }
 
 header{
-    width: 100%;
-
     display: grid;
     place-items: center;
     text-align: center;
-    
+        
+    width: 100%;
+
     margin-bottom: 5em;
 
     img{
@@ -89,6 +88,7 @@ header{
 h1{
     position: relative;
 
+    color: var(--color-text);
     font-family: 'Roboto Flex', sans-serif;
     font-size: clamp(1em, 7vw, 3.5em);
     line-height: 1;
@@ -99,7 +99,6 @@ h1{
     rgba(255, 220, 100, 0.6) 0 0 10px,
     rgba(255, 220, 100, 0.3) 0 0 20px;
 
-    color: var(--color-text);
     animation: variabeleTitel 6s linear infinite;
 
     &:hover{
@@ -195,6 +194,7 @@ header span:nth-of-type(2):hover{
 /* Tekst: Spanish Inquisition */
 header span:nth-of-type(2):hover::after{
     content:"Spanish Inquisition";
+
     position: absolute;
     width: 10em;
     left: 0;
@@ -263,7 +263,7 @@ main > section > label{
     &:hover{
         background-color: var(--color-btn-hover);
 
-        transition: .5s ease;
+        transition: background-color .5s ease;
     }
 }
 
@@ -274,7 +274,7 @@ main > section > label:has(input:checked){
 footer{
     margin-top: 11em;
 
-    /* 'Button' start */
+    /* Startknop */
     label{
         background-color: var(--color-btn-active);
         color: white;
@@ -294,30 +294,30 @@ footer{
         }
     }
 
-    p{
-        font-family: 'Roboto Flex', sans-serif;
-        letter-spacing: 0.015em;
-        font-size: 0.8em;
-
+    p{  
         position: absolute;
         bottom: 0.5em;
         right: 0.5em;
+
+        font-family: 'Roboto Flex', sans-serif;
+        letter-spacing: 0.015em;
+        font-size: 0.8em;
     }
 
     p:nth-of-type(2){
         display: none;
     }
 
-    /* 'Startbutton' hover */
+    /* Startknop hover */
     &:has([type="radio"]:hover){
         label{
             background-color: var(--color-btn-hover);
 
-            transition: .5s ease;
+            transition: background-color .5s ease;
         }
     }
 
-    /* Startbutton en teksten aanpassen */
+    /* Startknop en teksten aanpassen */
     &:has([type="radio"]:checked){
         label{
             display: none;
@@ -353,6 +353,10 @@ footer{
 /* --------------------------------------------------------------------------------- MARK: LICHAAM HOOFD
 */
 
+/* Bron: calc met var(--star-size) gebruiken. Ik heb clamp in het vorige project leren gebruiken 
+maar ik liep vast op sommige elementen responsive te maken met clamp en toen heb ik chatGPT gevraagd hoe ik dingen als mijn ster responsive zou kunnen maken. 
+Hij kwam toen met --star-size in de root zetten en alles via calc daarop afstemmen. Hij heeft me met een paar geholpen totdat ik het zelf begreep. */
+
 @layer lichaam{
 
 /* ---------------Ring van sterren --------------*/
@@ -384,6 +388,9 @@ main > section > aside > figure{
 /* Sterren zelf */
 main > section > aside > figure > span{
     color: gold;
+    text-align: center;
+    font-size: calc(var(--star-size) * 0.12);
+    line-height: calc(var(--star-size) * 0.16);
 
     position: absolute;
     top: 50%;
@@ -391,9 +398,6 @@ main > section > aside > figure > span{
 
     width: calc(var(--star-size) * 0.16);
     height: calc(var(--star-size) * 0.16);
-    font-size: calc(var(--star-size) * 0.12);
-    line-height: calc(var(--star-size) * 0.16);
-    text-align: center;
 
     margin-left: calc(var(--star-size) * -0.08);
     margin-top: calc(var(--star-size) * -0.08);
@@ -452,7 +456,7 @@ main > section > aside + div{
     width: var(--star-size);
     aspect-ratio: 5 / 4;
 
-    /* Bron clip-path ster: https://bennettfeely.com/clippy/ */
+    /* Bron clip-path ster: https://bennettfeely.com/clippy/. Vervolgens met chatGPT de inkepingen op de juiste plek gemaakt */
     clip-path: polygon(
         50% 0%, /* Punt 1 */
         60% 27%, /* Inkeping 1 (rechts)*/
@@ -532,6 +536,7 @@ main > section > aside + div > div{
 main > section > div:last-child{
     display: flex;
     justify-content: center;
+
     gap: calc(var(--star-size) * 0.16);
     margin-top: calc(var(--star-size) * -0.35);
 }
@@ -638,7 +643,7 @@ main > section > div > div label div{
 
 }
 
-/* Rechteroog heeft een delay met kijken */
+/* Rechteroog heeft een vertraging met kijken */
 main > section > div > div > label:last-child div{
     animation-delay: 0.5s;
 }
@@ -664,7 +669,7 @@ main > section > aside + div{
 
 }
 
-/* ------------------Knop START (Probably ok) ------------------ */
+/* ------------------Knop START ("Probably ok") ------------------ */
 @container style(--startknop:pressed){
 
     /* Titel wordt anders */
@@ -853,7 +858,8 @@ main > section > aside + div{
 
 /* ------------------Knop 1 Dizzy ------------------ */
 @container style(--dizzy:pressed){
-    /* Titel */
+
+    /* ------------- Titel ------------- */
     header span:nth-of-type(1){
         color: transparent;
     }
@@ -864,7 +870,7 @@ main > section > aside + div{
         color: white;
     }
 
-    /* Hele lichaam laten draaien */
+    /* ------------- Silly Walk ------------- */
     main > section:first-child{
         position: relative;
         transform-origin: 50% 100px;
@@ -886,7 +892,7 @@ main > section > aside + div{
 
     }
 
-    /* Achtergrond (kleur & kantel) */
+    /* ------------- Achtergrond ------------- */
     body{
         /* Bron cirkel achtergrond: https://www.magicpattern.design/tools/css-backgrounds */
         background-image: radial-gradient(circle at center center, #444cf7, #e5e5f7), repeating-radial-gradient(circle at center center, #444cf7, #444cf7, 9px, transparent 18px, transparent 9px);
@@ -984,6 +990,7 @@ main > section > aside + div{
 
     }
 
+    /* ------------- Special ------------- */
     /* Ring van sterren */
     main > section > aside{
         opacity: 1;
@@ -1004,7 +1011,8 @@ main > section > aside + div{
 
 /* ----------------Knop 2 Evil (& ander thema)---------------- */
 @container style(--evil:pressed){
-    /* Titel */
+
+    /* ------------- Titel ------------- */
     header span:nth-of-type(1){
         color: transparent;
     }
@@ -1267,7 +1275,7 @@ main > section > aside + div{
 /* ------------------Knop 3 Failing ------------------ */
 @container style(--failing:pressed){
 
-    /* Titel */
+    /* ------------- Titel ------------- */
     header span:nth-of-type(1){
         color: transparent;
     }
@@ -1277,7 +1285,7 @@ main > section > aside + div{
         color: white;
     }
 
-    /* Achtergrond */
+    /* ------------- Achtergrond ------------- */
     body{
         /* Bron inspiratie achtergrond: https://www.sliderrevolution.com/resources/css-animated-background/ */
         background: linear-gradient(90deg, red, white, red, white);
@@ -1318,7 +1326,7 @@ main > section > aside + div{
     
     }
 
-    /* Loopje */
+    /* ------------- Silly Walk ------------- */
     section:nth-of-type(2){
         animation: loopVanScherm 5s linear infinite;
     }
@@ -1403,7 +1411,7 @@ main > section > aside + div{
 /* ------------------Knop 4 Defect ------------------ */
 @container style(--defect:pressed){
 
-    /* Titel */
+    /* ------------- Titel ------------- */
     header span:nth-of-type(1){
         color: transparent;
     }
@@ -1414,7 +1422,7 @@ main > section > aside + div{
         color: black;
     }
 
-    /* Achtergrond */
+    /* ------------- Achtergrond ------------- */
     /* Bronnen: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/repeating-linear-gradient
     & https://codepen.io/meduzen/pen/zxbwRV?editors=1100 */
     body::after{
@@ -1451,6 +1459,83 @@ main > section > aside + div{
 
     }
 
+    /* ------------- Silly Walk ------------- */
+    /* Linkerbeen */
+    section:nth-of-type(2) > div:last-child > div:first-child{
+        animation: beenLinksDefect 0.6s infinite ease-in-out;
+    }
+
+    @keyframes beenLinksDefect{
+
+        0%, 100%{
+            transform: rotate(-20deg); 
+        }
+
+        40%{ 
+            transform: rotate(40deg); 
+        }
+
+        60%{ 
+            transform: rotate(10deg); 
+        }
+
+    }
+
+    /* Rechterbeen */
+    section:nth-of-type(2) > div:last-child > div:last-child{
+        animation: beenRechtsDefect 0.45s infinite ease-in-out;
+        animation-delay: 0.1s;
+    }
+
+    @keyframes beenRechtsDefect{
+
+        0%, 100%{ 
+            transform: rotate(30deg); 
+        }
+
+        30%{ 
+            transform: rotate(-30deg); 
+        }
+
+        50%{ 
+            transform: rotate(50deg); 
+        }
+
+    }
+
+    /* Been Uitval (linkerbeen)*/
+    section:nth-of-type(2) > div:last-child > div:first-child{
+        animation: beenUitval 5s infinite;
+    }
+
+    @keyframes beenUitval{
+
+        0%, 65%{
+            transform: rotate(0deg) translateY(0);
+        }
+
+        70%{
+            transform: rotate(20deg) translateY(10px);
+        }
+
+        75%{
+            transform: translateY(200px) rotate(90deg);
+        }
+
+        75%, 90%{
+            transform: translateY(300px) rotate(90deg);
+        }
+
+        95%{
+            transform: translateY(-20px) rotate(-30deg);
+        }
+
+        100%{
+            transform: rotate(0deg) translateY(0);
+        }
+    }
+
+    /* ------------- Special ------------- */
     /* Glitch extra hoofd */
     main > section:nth-of-type(2){
         transform: rotate(10deg);
@@ -1558,82 +1643,6 @@ main > section > aside + div{
 
     }
 
-    /* Silly Walk */
-    /* Linkerbeen */
-    section:nth-of-type(2) > div:last-child > div:first-child{
-        animation: beenLinksDefect 0.6s infinite ease-in-out;
-    }
-
-    @keyframes beenLinksDefect{
-
-        0%, 100%{
-            transform: rotate(-20deg); 
-        }
-
-        40%{ 
-            transform: rotate(40deg); 
-        }
-
-        60%{ 
-            transform: rotate(10deg); 
-        }
-
-    }
-
-    /* Rechterbeen */
-    section:nth-of-type(2) > div:last-child > div:last-child{
-        animation: beenRechtsDefect 0.45s infinite ease-in-out;
-        animation-delay: 0.1s;
-    }
-
-    @keyframes beenRechtsDefect{
-
-        0%, 100%{ 
-            transform: rotate(30deg); 
-        }
-
-        30%{ 
-            transform: rotate(-30deg); 
-        }
-
-        50%{ 
-            transform: rotate(50deg); 
-        }
-
-    }
-
-    /* Been Uitval (linkerbeen)*/
-    section:nth-of-type(2) > div:last-child > div:first-child{
-        animation: beenUitval 5s infinite;
-    }
-
-    @keyframes beenUitval{
-
-        0%, 65%{
-            transform: rotate(0deg) translateY(0);
-        }
-
-        70%{
-            transform: rotate(20deg) translateY(10px);
-        }
-
-        75%{
-            transform: translateY(200px) rotate(90deg);
-        }
-
-        75%, 90%{
-            transform: translateY(300px) rotate(90deg);
-        }
-
-        95%{
-            transform: translateY(-20px) rotate(-30deg);
-        }
-
-        100%{
-            transform: rotate(0deg) translateY(0);
-        }
-    }
-
     /* Glitch */
     main > section:nth-of-type(2){
         animation: glitchShake 2s infinite;
@@ -1682,10 +1691,9 @@ main > section > aside + div{
 }
 
 /* Knoppen 1 + 2 */
-/* CHECK */
 @container style(--dizzy:pressed) and style(--evil:pressed){
 
-    /* Titel */
+    /* ------------- Titel ------------- */
     header span:nth-of-type(1){
         color: transparent;
     }
@@ -1695,7 +1703,7 @@ main > section > aside + div{
         color: white;
     }
 
-    /* Achtergrond */
+    /* ------------- Achtergrond ------------- */
     body{
         --color-star: #F4574C;
 
@@ -1750,7 +1758,7 @@ main > section > aside + div{
 
     }
 
-    /* Special */
+    /* ------------- Special ------------- */
     main > section > aside + div{
         animation: misselijkGroenEnEvil 2s linear infinite !important;
     }
@@ -1789,10 +1797,9 @@ main > section > aside + div{
 }
 
 /* Knoppen 1 + 3 */
-/* CHECK */
 @container style(--dizzy:pressed) and style(--failing:pressed){
 
-    /* Titel */
+    /* ------------- Titel ------------- */
     header span:nth-of-type(1){
         color: transparent;
     }
@@ -1802,7 +1809,7 @@ main > section > aside + div{
         color: white;
     }
 
-    /* Achtergrond */
+    /* ------------- Achtergrond ------------- */
     body{
         background: linear-gradient(90deg, red, white, red, white);
         background-size: 200% 200%;
@@ -1841,7 +1848,7 @@ main > section > aside + div{
     
     }
 
-    /* Silly Walk */
+    /* ------------- Silly Walk ------------- */
     main > section:first-child{
         position: relative;
         transform-origin: 50% 100px;
@@ -1863,7 +1870,7 @@ main > section > aside + div{
 
     }
 
-    /* Special */
+    /* ------------- Special ------------- */
     main > section > aside + div{
         animation: misselijkFailing 1s linear infinite !important;
     }
@@ -1902,10 +1909,9 @@ main > section > aside + div{
 }
 
 /* Knoppen 1 + 4 */
-/* CHECK */
 @container style(--dizzy:pressed) and style(--defect:pressed){
 
-    /* Titel */
+    /* ------------- Titel ------------- */
     header span:nth-of-type(1){
         color: transparent;
     }
@@ -1915,7 +1921,7 @@ main > section > aside + div{
         color: white;
     }
 
-    /* Achtergrond */
+    /* ------------- Achtergrond ------------- */
     body::after{
         content: "";
         position: fixed;
@@ -1960,7 +1966,7 @@ main > section > aside + div{
 
     }
 
-    /* Special */
+    /* ------------- Special ------------- */
     /* Verliest geen been */
     section:nth-of-type(2) > div:last-child > div:first-child{
         animation: none;
@@ -1969,10 +1975,9 @@ main > section > aside + div{
 }
 
 /* Knoppen 2 + 3 */
-/* CHECK */
 @container style(--evil:pressed) and style(--failing:pressed){
 
-    /* Titel */
+    /* ------------- Titel ------------- */
     header span:nth-of-type(1){
         color: transparent;
     }
@@ -1982,7 +1987,7 @@ main > section > aside + div{
         color: white;
     }
 
-    /* Achtergrond */
+    /* ------------- Achtergrond ------------- */
     body{
         background: linear-gradient(90deg, #000435, white, #000435, white);
         background-size: 200% 200%;
@@ -1993,7 +1998,6 @@ main > section > aside + div{
 }
 
 /* Knoppen 2 + 4 */
-/* CHECK */
 @container style(--evil:pressed) and style(--defect:pressed){
 
     /* ---------------Titel------------- */
@@ -2049,7 +2053,6 @@ main > section > aside + div{
 }
 
 /* Knoppen 3 + 4 */
-/* CHECK */
 @container style(--failing:pressed) and style(--defect:pressed){
     
     /* ---------------Titel------------- */
@@ -2104,7 +2107,6 @@ main > section > aside + div{
 }
 
 /* Knoppen 1 + 2 + 3 */
-/* CHECK */
 @container style(--dizzy:pressed) and style(--evil:pressed) and style(--failing:pressed){
         
     /* ---------------Titel------------- */
@@ -2158,7 +2160,6 @@ main > section > aside + div{
 }
 
 /* Knoppen 1 + 2 + 4 */
-/* CHECK */
 @container style(--dizzy:pressed) and style(--evil:pressed) and style(--defect:pressed){
 
     /* ---------------Titel------------- */
@@ -2193,13 +2194,13 @@ main > section > aside + div{
         );
 
         pointer-events: none;
-        animation: scanlines2 0.1s linear infinite;
+        animation: lijnenCombi 0.1s linear infinite;
         opacity: 0.4;
 
         z-index: -1;
     }
 
-    @keyframes scanlines2{
+    @keyframes lijnenCombi{
 
         0%{ 
             transform: translateY(0); 
@@ -2214,10 +2215,10 @@ main > section > aside + div{
     /* ------------- Silly Walk ------------- */
     /* Agressiever */
     section:nth-of-type(2) div{
-        animation: trillen2 0.2s infinite;
+        animation: meerTrillen 0.2s infinite;
     }
 
-    @keyframes trillen2{
+    @keyframes meerTrillen{
 
         0%{ 
             transform: translateY(0px); 
@@ -2235,10 +2236,10 @@ main > section > aside + div{
 
     /* Linkerbeen */
     section:nth-of-type(2) > div:last-child > div:first-child{
-        animation: beenLinksEvil2 1.2s infinite linear;
+        animation: linksBeen 1.2s infinite linear;
     }
 
-    @keyframes beenLinksEvil2{
+    @keyframes linksBeen{
 
         0%{
             transform: rotate(-45deg);
@@ -2260,10 +2261,10 @@ main > section > aside + div{
 
     /* Rechterbeen */
     section:nth-of-type(2) > div:last-child > div:last-child{
-        animation: beenRechtsEvil2 1.2s infinite linear;
+        animation: rechtsBeen 1.2s infinite linear;
     }
 
-    @keyframes beenRechtsEvil2{
+    @keyframes rechtsBeen{
 
         0%{
             transform: rotate(45deg);
@@ -2285,11 +2286,11 @@ main > section > aside + div{
 
     /* Knie */
     section:nth-of-type(2) > div:last-child > div > div{
-        animation: knieEvil2 0.6s infinite linear;
+        animation: evilKnie 0.6s infinite linear;
         transform-origin: top;
     }
 
-    @keyframes knieEvil2{
+    @keyframes evilKnie{
 
         0%{
             transform: rotate(0deg);
@@ -2307,11 +2308,11 @@ main > section > aside + div{
 
     /* Voet links */
     section:nth-of-type(2) > div:last-child > div > div > div{
-        animation: voetLinksEvil2 0.8s infinite ease-in-out;
+        animation: linkerVoet 0.8s infinite ease-in-out;
         transform-origin: top center;
     }
 
-    @keyframes voetLinksEvil2{
+    @keyframes linkerVoet{
 
         0%{
             transform: rotate(25deg);
@@ -2329,11 +2330,11 @@ main > section > aside + div{
 
     /* Voet rechts */
     section:nth-of-type(2) > div:last-child > ul:last-child > li:nth-child(2) div{
-        animation: voetRechtsEvil2 0.8s infinite ease-in-out;
+        animation: rechterVoet 0.8s infinite ease-in-out;
         transform-origin: top center;
     }
 
-    @keyframes voetRechtsEvil2{
+    @keyframes rechterVoet{
 
         0%{
             transform: rotate(-25deg);
@@ -2351,10 +2352,10 @@ main > section > aside + div{
 
     /* Heen en weer lopen */
     section:nth-of-type(2){
-        animation: basisLoopjeEvil2 6s linear infinite;
+        animation: basisLoopjeCombi 6s linear infinite;
     }
 
-    @keyframes basisLoopjeEvil2{
+    @keyframes basisLoopjeCombi{
 
         0%{
             transform: translateX(-10px);
@@ -2372,10 +2373,9 @@ main > section > aside + div{
 }
 
 /* Knoppen 1 + 3 + 4 */
-/* CHECK */
 @container style(--dizzy:pressed) and style(--failing:pressed) and style(--defect:pressed){
     
-      /* Titel */
+    /* ------------- Titel ------------- */
     header span:nth-of-type(1){
         color: transparent;
     }
@@ -2440,7 +2440,6 @@ main > section > aside + div{
 }
 
 /* Knoppen 1 + 2 + 3 + 4 */
-/* SUPERNOVA EN VOET */
 @container style(--dizzy:pressed) and style(--evil:pressed) and style(--failing:pressed) and style(--defect:pressed){
     
     /* ---------------Titel------------- */
@@ -2453,7 +2452,7 @@ main > section > aside + div{
         color: white;
     }
 
-    /* ---------------Monty Phyton Foot & Supernova------------- */
+    /* ---------------Monty Phyton Foot------------- */
     /* Algemene styling */
     /* Interactieknoppen weg */
     main > section > label{
@@ -2468,7 +2467,7 @@ main > section > aside + div{
         opacity: 1;
 
         filter: brightness(1);
-        animation: achtergrondDizzy2 5s infinite,
+        animation: draaiendeAchtergrond 5s infinite,
         stopDizzy 0.1s forwards !important;
 
         /* Monty Phyton voet */
@@ -2485,7 +2484,7 @@ main > section > aside + div{
         }
     }
 
-    @keyframes achtergrondDizzy2{
+    @keyframes draaiendeAchtergrond{
 
         0%{
             background-color: steelblue;
@@ -2633,7 +2632,7 @@ main > section > aside + div{
         animation: none;
     }
 
-    /* SUPERNOVAAAAAAA (na val voet) */
+    /* Na val voet */
     /* Titel weg */
     header{
         animation: titelVerdwijn 1.5s linear forwards !important;
@@ -2680,8 +2679,8 @@ main > section > aside + div{
             opacity: 1;
         }
     }
-
 }
 
 }
 
+/* Pff */

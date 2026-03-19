@@ -115,7 +115,7 @@ In de avond/ nacht:
 ### Vrijdag
 ...
 
-### Weekverslag week 6
+### Weekverslag week 7
 ...
 
 </details>
@@ -123,6 +123,30 @@ In de avond/ nacht:
 <details><summary>Bronnenlijst</summary>
 
 ## Bronnen
+
+### HTML
+Monty Python quotes en termen
+- https://inews.co.uk/light-relief/jokes/funniest-monty-python-quotes-136980?srsltid=AfmBOoqPvhGBc1fCSfd47pFB-cAKOYXK_m5V66rLdLUfIQT6JkbLHDh3
+- https://www.youtube.com/watch?v=psMMKgvpGfg & https://www.youtube.com/watch?v=zIV4poUZAQo & Het Monty Phyton YouTube account
+- https://www.yahoo.com/entertainment/32-best-quotes-moments-monty-173501975.html?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAADDFd4XZbww9EFC9cmUfpq3MPfKe82tP1RZnggz7kN7bCUufaoE8dImzrD3eczG3tRL1Rv_FstygLXEYN5uVJjY672P5hnXDpybA3yYJrJwrCa0QUc5OePD4W5nWyI-44K3IHbjCC-y3oTcOS1HuhVVQSVeY_S-9mz0vKGOJFQCJ
+- Voet Monty Python: https://nl.wikipedia.org/wiki/Bestand:Monty_python_foot.png
+
+### CSS
+- Inspiratiebron titel: https://codepen.io/RobinTreur/pen/pyWLeB?editors=1100
+- Font-variation-settings werkte niet voor mijn variabele titel. Vervolgens met chatGPT erachter gekomen dat ik font-weight en font-stretch moet gebruiken. Daarna https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Fonts/Variable_fonts voor de styling en animatie font gebruikt 
+- Bron voor hoe animaties aanpakken: https://miocene.io/demo/css-noodle/
+- Ring van sterren: https://3dtransforms.desandro.com/carousel
+- Clip-path ster: https://bennettfeely.com/clippy/. Vervolgens met chatGPT de inkepingen op de juiste plek gemaakt
+- Oogvorm: https://codepen.io/samc36/pen/KNEOpG 
+- Bij begin container @style (--startknop:pressed): Ik has voorheen flexboxen op de header voor de titels en vervolgens position: absolute op beide titels voor styling. Dat schaalde niet lekker mee en ik mmoest ze vervolgens bij elke nieuwe knop stylen. Hier liep ik op vast en ik heb die code in chatGPT gezet met als prompt hoe ik de titels wél in het midden kon centreren. Hij kwam met grid.
+- Cirkel achtergrond inspiratie bij knop 1: dizzy: https://www.magicpattern.design/tools/css-backgrounds
+- Inspiratie achtergrond bij knop 3 failing: https://www.sliderrevolution.com/resources/css-animated-background/
+- https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/filter voor het gebruik van filters, verdiept
+- Achtergrond knop 4 defect: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/repeating-linear-gradient & https://codepen.io/meduzen/pen/zxbwRV?editors=1100 
+- Bron: calc met var(--star-size) gebruiken. Ik heb clamp in het vorige project leren gebruiken maar ik liep vast op sommige elementen responsive te maken met clamp en toen heb ik chatGPT gevraagd hoe ik dingen als mijn ster responsive zou kunnen maken. 
+Hij kwam toen met --star-size in de root zetten en alles via calc daarop afstemmen. Hij heeft me met een paar geholpen totdat ik het zelf begreep.
+
+Ik heb ook al mijn code in chatGPT gezet en het laten controleren op fouten. Hier kwam vooral uit: comments consistenter maken, hier en daar wat typfoutjes. Hij zei grappig genoeg ook dat mijn nesting en layers niet werkt maar die werken wel. 
 
 </details>
 
